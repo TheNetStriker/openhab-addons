@@ -225,7 +225,6 @@ public class WLedSegmentHandler extends BaseThingHandler {
                     localApi.setPalette(command.toString(), config.segmentIndex);
                     break;
                 case CHANNEL_FX:
-                    localApi.setGlobalOn(true);
                     localApi.setEffect(command.toString(), config.segmentIndex);
                     break;
                 case CHANNEL_SPEED:

@@ -396,7 +396,8 @@ public class WledApiV084 implements WledApi {
 
     @Override
     public void setEffect(String string, int segmentIndex) throws ApiException {
-        postState("{\"seg\":[{\"id\":" + segmentIndex + ",\"fx\":" + string + "}]}");
+        updateStateFromReply(postState(
+                "{\"on\":true,\"v\":true,\"tt\":2,\"seg\":[{\"id\":" + segmentIndex + ",\"fx\":" + string + "}]}"));
     }
 
     @Override
