@@ -178,7 +178,7 @@ public class WLedBridgeHandler extends BaseBridgeHandler {
                     }
                     break;
                 case CHANNEL_PLAYLISTS:
-                    localApi.setPreset(command.toString());
+                    localApi.setPlaylist(command.toString());
                     break;
                 case CHANNEL_SYNC_SEND:
                     localApi.setUdpSend(OnOffType.ON.equals(command));

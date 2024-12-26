@@ -64,6 +64,8 @@ public interface WledApi {
 
     void setPreset(String string) throws ApiException;
 
+    void setPlaylist(String string) throws ApiException;
+
     void setPalette(String string, int segmentIndex) throws ApiException;
 
     void setFxIntencity(PercentType percentType, int segmentIndex) throws ApiException;

@@ -402,7 +402,20 @@ public class WledApiV084 implements WledApi {
 
     @Override
     public void setPreset(String string) throws ApiException {
-        updateStateFromReply(postState("{\"ps\":" + string + ",\"v\":true}"));
+        String response = postState("{\"ps\":" + string + "}");
+        // Presets are set asynchronously, so we set the preset item directly.
+        if (response.equals("{\"success\":true}")) {
+            handler.update(CHANNEL_PRESETS, new StringType(string));
+        }
+    }
+
+    @Override
+    public void setPlaylist(String string) throws ApiException {
+        String response = postState("{\"ps\":" + string + "}");
+        // Presets are set asynchronously, so we set the playlist item directly.
+        if (response.equals("{\"success\":true}")) {
+            handler.update(CHANNEL_PLAYLISTS, new StringType(string));
+        }
     }
 
     @Override
